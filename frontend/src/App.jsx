@@ -59,6 +59,7 @@ const App = () => {
         <Header />
         <Container
           sx={{
+            backgroundColor: "wheat",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

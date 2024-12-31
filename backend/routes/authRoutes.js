@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
       return res.redirect("/auth");
     } else {
       console.log("Token found. Redirecting to frontend...");
-      return res.redirect("http://localhost:3000");
+      return res.redirect("http://localhost:3002");
     }
   } catch (error) {
     console.error("Error handling token:", error);
@@ -43,7 +43,7 @@ router.get("/auth", async (req, res) => {
     if (siteToken) {
       await storeToken("user", siteToken);
       console.log("Site token found and stored. Redirecting to frontend...");
-      return res.redirect("http://localhost:3000");
+      return res.redirect("http://localhost:3002");
     } else {
       const publicUrl = await getNgrokUrl();
       const authorizeUrl = WebflowClient.authorizeURL({
@@ -77,7 +77,7 @@ router.get("/auth/callback", async (req, res) => {
 
     await storeToken("user", accessToken); // Use access_token
     console.log("Access token obtained and stored. Redirecting to frontend...");
-    res.redirect("http://localhost:3000");
+    res.redirect("http://localhost:3002");
   } catch (error) {
     console.error("Error fetching access token:", error);
     res.status(500).send("Failed to fetch access token");

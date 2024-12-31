@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 8000;
 // Express Options
 app.use(
   cors({
-    origin: "http://localhost:3000", // Allow only this origin to access the resources
+    origin: "http://localhost:3002", // Allow only this origin to access the resources
     optionsSuccessStatus: 200, // For legacy browser support
   })
 );
@@ -46,7 +46,7 @@ const startServer = async () => {
 
     // Add URL information to the table
     table.push(
-      ["Development URL (Frontend)", "http://localhost:3000"],
+      ["Development URL (Frontend)", "http://localhost:3002"],
       ["Development URL (Backend)", `http://localhost:${PORT}`]
     );
 
